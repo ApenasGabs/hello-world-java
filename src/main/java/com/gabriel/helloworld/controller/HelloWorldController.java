@@ -24,8 +24,11 @@ public class HelloWorldController {
     );
   }
 
-  @GetMapping("/objetivo")
-  public String word() {
-    return "World!";
+  @GetMapping("/objetivos/semana")
+  public Map<String, List<String>> objetivo() {
+    return Map.of(
+      "Hardskill", List.of("Treinar MySQL", "Treinar SpringBoot"),
+      "Softskill", List.of("Comunicacao", "Terminar o pitch" )
+    );
   }
 }
