@@ -1,5 +1,9 @@
 package com.gabriel.helloworld.controller;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,11 +15,16 @@ public class HelloWorldController {
   public String helloword() {
     return "Hello, World!";
   }
-  @GetMapping("/hello")
-  public String hello() {
-    return "Hello!";
+
+  @GetMapping("/bsm")
+  public Map<String, List<String>> bsm() {
+    return Map.of(
+      "Habilidades", List.of("Trabalho em equipe", "Orientação aos detalhes", "Proatividade", "Comunicação"),
+      "Mentalidades", List.of("Persistência", "Responsabilidade pessoal", "Orientação ao futuro", "Mentalidade de crescimento")
+    );
   }
-  @GetMapping("/world")
+
+  @GetMapping("/objetivo")
   public String word() {
     return "World!";
   }
